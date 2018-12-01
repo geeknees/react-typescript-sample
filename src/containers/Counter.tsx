@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 class Counter extends React.Component<any, any> {
   constructor(props: any) {
@@ -43,4 +44,18 @@ class Counter extends React.Component<any, any> {
   }
 }
 
-export default Counter
+const mapStateToProps = (state: any) => ({
+  value: state.counter,
+})
+
+const mapDispatchToProps = (dispatch: any) => ({
+  onIncrement: () => {
+    dispatch({ type: 'INCREMENT' })
+  },
+  // tslint:disable-next-line:object-literal-sort-keys
+  onDecrement: () => {
+    dispatch({ type: 'DECREMENT' })
+  }
+})
+
+export default connect(mapStateToProps,   mapDispatchToProps)(Counter)

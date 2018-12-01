@@ -1,31 +1,26 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 
-import Counter from './components/Counter'
-import counter from './modules/counter'
-const store = createStore(counter)
-const rootEl = document.getElementById('root')
-
 import App from './containers/App'
+import Counter from './containers/Counter'
 import './index.css'
 
+import modules from './modules'
+const store = createStore(modules)
+const rootEl = document.getElementById('root')
 import registerServiceWorker from './registerServiceWorker'
 
 const render = () => ReactDOM.render(
-  <div>
-    <App />
-    <Counter
-      value={store.getState()}
-      // tslint:disable-next-line:jsx-no-lambda
-      onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-      // tslint:disable-next-line:jsx-no-lambda
-      onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-    />
-  </div>,
+  <Provider store={store}>
+    <div>
+      <App />
+      <Counter/>
+    </div>
+  </Provider>,
   rootEl
 )
 
 render()
 registerServiceWorker()
-store.subscribe(render)
