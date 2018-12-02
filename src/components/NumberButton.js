@@ -1,7 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const NumberButton = ({n, onClick}) => (
-  <button onClick={onClick}>{n}</button>
-);
+const NumberButton = ({ n, onClick }) => <button onClick={onClick}>{n}</button>
 
-export default NumberButton;
+export default NumberButton

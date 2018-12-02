@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import * as calculatorModule from '../modules/calculator';
+import * as calculatorModule from '../modules/calculator'
 
-import NumberButton from '../components/NumberButton';
-import PlusButton from '../components/PlusButton';
-import CalcResult from '../components/CalcResult';
-
+import NumberButton from '../components/NumberButton'
+import PlusButton from '../components/PlusButton'
+import CalcResult from '../components/CalcResult'
 
 class Calculator extends Component {
   render() {
-    const { calculator, actions } = this.props;
+    const { calculator, actions } = this.props
     return (
       <div>
         <div>
-          <NumberButton n={1} onClick={() => actions.onNumClick(1)} />
+          ;<NumberButton n={1} onClick={() => actions.onNumClick(1)} />
           <NumberButton n={2} onClick={() => actions.onNumClick(2)} />
           <NumberButton n={3} onClick={() => actions.onNumClick(3)} />
         </div>
@@ -34,22 +33,30 @@ class Calculator extends Component {
           <PlusButton onClick={actions.onPlusClick()} />
         </div>
         <div>
-          <CalcResult result={calculator.showingResult ? calculator.resultValue : calculator.inputValue} />
+          <CalcResult
+            result={
+              calculator.showingResult
+                ? calculator.resultValue
+                : calculator.inputValue
+            }
+          />
         </div>
       </div>
-    );
+    )
   }
 }
 
-
 const mapState = (state, ownProps) => ({
-  calculator: state.calculator,
-});
+  calculator: state.calculator
+})
 
 function mapDispatch(dispatch) {
   return {
-    actions: bindActionCreators(calculatorModule, dispatch),
-  };
+    actions: bindActionCreators(calculatorModule, dispatch)
+  }
 }
 
-export default connect(mapState, mapDispatch)(Calculator);
+export default connect(
+  mapState,
+  mapDispatch
+)(Calculator)

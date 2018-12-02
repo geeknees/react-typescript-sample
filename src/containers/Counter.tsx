@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
+import * as React from 'react'
+import { connect } from 'react-redux'
 
 class Counter extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
-    this.incrementAsync = this.incrementAsync.bind(this);
-    this.incrementIfOdd = this.incrementIfOdd.bind(this);
+    super(props)
+    this.incrementAsync = this.incrementAsync.bind(this)
+    this.incrementIfOdd = this.incrementIfOdd.bind(this)
   }
 
   public incrementIfOdd() {
@@ -22,30 +22,17 @@ class Counter extends React.Component<any, any> {
     const { value, onIncrement, onDecrement } = this.props
     return (
       <p>
-        Clicked: {value} times
-        {' '}
-        <button onClick={onIncrement}>
-          +
-        </button>
-        {' '}
-        <button onClick={onDecrement}>
-          -
-        </button>
-        {' '}
-        <button onClick={this.incrementIfOdd}>
-          Increment if odd
-        </button>
-        {' '}
-        <button onClick={this.incrementAsync}>
-          Increment async
-        </button>
+        Clicked: {value} times <button onClick={onIncrement}>+</button>{' '}
+        <button onClick={onDecrement}>-</button>{' '}
+        <button onClick={this.incrementIfOdd}>Increment if odd</button>{' '}
+        <button onClick={this.incrementAsync}>Increment async</button>
       </p>
     )
   }
 }
 
 const mapStateToProps = (state: any) => ({
-  value: state.counter,
+  value: state.counter
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -58,4 +45,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   }
 })
 
-export default connect(mapStateToProps,   mapDispatchToProps)(Counter)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter)

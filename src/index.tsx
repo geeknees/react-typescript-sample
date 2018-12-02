@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 import App from './containers/App'
@@ -12,15 +12,16 @@ const store = createStore(modules)
 const rootEl = document.getElementById('root')
 import registerServiceWorker from './registerServiceWorker'
 
-const render = () => ReactDOM.render(
-  <Provider store={store}>
-    <div>
-      <App />
-      <Counter/>
-    </div>
-  </Provider>,
-  rootEl
-)
+const render = () =>
+  ReactDOM.render(
+    <Provider store={store}>
+      <div className='container'>
+        <App />
+        <Counter />
+      </div>
+    </Provider>,
+    rootEl
+  )
 
 render()
 registerServiceWorker()

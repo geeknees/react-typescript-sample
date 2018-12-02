@@ -1,7 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const PlusButton = () => (
-  <button>+</button>
-);
+const PlusButton = () => <button>+</button>
 
-export default PlusButton;
+export default PlusButton

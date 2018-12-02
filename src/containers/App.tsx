@@ -1,15 +1,15 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import { Member } from '../components/Member'
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Member name='Hello' />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

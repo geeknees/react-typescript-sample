@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import * as React from 'react';
+import * as React from 'react'
 import Counter from './Counter'
 
 function setup(value = 0) {
@@ -8,9 +8,7 @@ function setup(value = 0) {
     // tslint:disable-next-line:object-literal-sort-keys
     onDecrement: jest.fn()
   }
-  const component = shallow(
-    <Counter value={value} {...actions} />
-  )
+  const component = shallow(<Counter value={value} {...actions} />)
 
   return {
     component,
@@ -57,7 +55,7 @@ describe('Counter component', () => {
     expect(actions.onIncrement).toBeCalled()
   })
 
-  it('fourth button should call onIncrement in a second', (done) => {
+  it('fourth button should call onIncrement in a second', done => {
     const { buttons, actions } = setup()
     buttons.at(3).simulate('click')
     setTimeout(() => {
