@@ -3,7 +3,7 @@
 export const INPUT_NUMBER = 'INPUT_NUMBER'
 export const PLUS = 'PLUS'
 
-export const onNumClick = numbers => ({
+export const onNumClick = (numbers: any) => ({
   numbers,
   type: INPUT_NUMBER
 })
@@ -20,7 +20,7 @@ const initialAppState = {
 
 // reducers
 
-const calculator = (state = initialAppState, action) => {
+const calculator = (state = initialAppState, action: any) => {
   if (action.type === INPUT_NUMBER) {
     return {
       ...state,

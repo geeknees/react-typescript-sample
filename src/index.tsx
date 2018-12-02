@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 import App from './containers/App'
+import Calculator from './containers/Calculator'
 import Counter from './containers/Counter'
 import './index.css'
 
@@ -18,6 +19,7 @@ const render = () =>
       <div className='container'>
         <App />
         <Counter />
+        <Calculator />
       </div>
     </Provider>,
     rootEl

@@ -14,6 +14,7 @@ const setup = (setupProps = {}) => {
   )
   return {
     store,
+    // tslint:disable-next-line:object-literal-sort-keys
     p: wrapper.find('p')
   }
 }
